@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Login from './Login';
 import Dashboard from './Dashboard';
 import Register from './Register';
+import "./styles.css"
 
 function App() {
   const [user, setUser] = useState(null);

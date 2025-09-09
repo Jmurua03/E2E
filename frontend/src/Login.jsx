@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import "./styles.css"
 
 export default function Login({ onLogin, onShowRegister }) {
   const [username, setUsername] = useState('');
@@ -21,29 +22,35 @@ export default function Login({ onLogin, onShowRegister }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>Login</h2>
-      <input
-        placeholder="Usuario"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="Contraseña"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button type="submit">Ingresar</button>
-      {error && <p>{error}</p>}
-
-      <button
-        type="button"
-        onClick={onShowRegister}
-        style={{ marginTop: '10px' }}
-      >
-        Registrarse
-      </button>
-    </form>
+    <>
+    <h1> E2E Testing </h1>
+    <div className="logInDiv">
+      <form className="logInForm" onSubmit={handleSubmit}>
+        <h2>LogIn</h2>
+        <input
+          placeholder="Usuario"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <p></p>
+        <input
+          type="password"
+          placeholder="Contraseña"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <p></p>
+        <button type="submit">Ingresar</button>
+        <button
+          type="button"
+          onClick={onShowRegister}
+          style={{ marginTop: '10px' }}
+        >
+          Registrarse
+        </button>
+        {error && <p>{error}</p>}
+      </form>
+    </div>
+    </>
   );
 }

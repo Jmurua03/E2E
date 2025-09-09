@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import "./styles.css"
 
 export default function Register({ onRegister }) {
   const [username, setUsername] = useState('');
@@ -16,27 +17,28 @@ export default function Register({ onRegister }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>Registro</h2>
-      <input
-        placeholder="Usuario"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="Contraseña"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="Confirmar Contraseña"
-        value={confirm}
-        onChange={(e) => setConfirm(e.target.value)}
-      />
-      <button type="submit">Registrarse</button>
-      {error && <p>{error}</p>}
-    </form>
+    <div className="logInDiv">
+      <form className="logInform" onSubmit={handleSubmit}>
+        <input
+          placeholder="Usuario"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <input
+          type="password"
+          placeholder="Contraseña"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <input
+          type="password"
+          placeholder="Confirmar Contraseña"
+          value={confirm}
+          onChange={(e) => setConfirm(e.target.value)}
+        />
+        <button type="submit">Registrarse</button>
+        {error && <p>{error}</p>}
+      </form>
+    </div>
   );
 }
