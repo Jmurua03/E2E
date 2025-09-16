@@ -5,7 +5,7 @@ describe('Registro E2E - correcto', () => {
     cy.contains('Registrarse').click();
 
     cy.get('input[placeholder="Usuario"]').type('nuevoUsuario');
-    cy.get('input[placeholder="Contraseña"]').type('1234');
+    cy.get('input[placeholder="contra"]').type('1234');
     cy.get('input[placeholder="Confirmar Contraseña"]').type('1234');
     cy.get('button[type="submit"]').click();
 
